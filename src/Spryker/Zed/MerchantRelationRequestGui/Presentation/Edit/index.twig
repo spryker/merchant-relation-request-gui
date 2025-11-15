@@ -39,18 +39,18 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'General' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Merchant' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantRelationRequest.merchant.name }}</div>
+                <div class="col-sm-2"><b>{{ 'Merchant' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantRelationRequest.merchant.name }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Created date' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantRelationRequest.createdAt | formatDateTime }}</div>
+                <div class="col-sm-2"><b>{{ 'Created date' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantRelationRequest.createdAt | formatDateTime }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Status' | trans }}</b></div>
-                <div class="col-xs-10">
+                <div class="col-sm-2"><b>{{ 'Status' | trans }}</b></div>
+                <div class="col-sm-10">
                     <span class="label {{ statusClassLabelMapping[merchantRelationRequest.status] | default }}">
                         {{ merchantRelationRequest.status | trans }}
                     </span>
@@ -62,18 +62,18 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Company Details' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Company' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantRelationRequest.ownerCompanyBusinessUnit.company.name }}</div>
+                <div class="col-sm-2"><b>{{ 'Company' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantRelationRequest.ownerCompanyBusinessUnit.company.name }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Business Unit Owner' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantRelationRequest.ownerCompanyBusinessUnit.name }}</div>
+                <div class="col-sm-2"><b>{{ 'Business Unit Owner' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantRelationRequest.ownerCompanyBusinessUnit.name }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ merchantRelationRequestForm.children.assigneeCompanyBusinessUnits.vars.label | trans }}</b></div>
-                <div class="col-xs-10">{{ form_row(merchantRelationRequestForm.children.assigneeCompanyBusinessUnits, {
+                <div class="col-sm-2"><b>{{ merchantRelationRequestForm.children.assigneeCompanyBusinessUnits.vars.label | trans }}</b></div>
+                <div class="col-sm-10">{{ form_row(merchantRelationRequestForm.children.assigneeCompanyBusinessUnits, {
                         label: false,
                         disabled: not isEditableMerchantRelationRequest
                     }) }}</div>
@@ -84,8 +84,8 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Contact Details' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Name' | trans }}</b></div>
-                <div class="col-xs-10">
+                <div class="col-sm-2"><b>{{ 'Name' | trans }}</b></div>
+                <div class="col-sm-10">
                     {{ merchantRelationRequest.companyUser.customer.salutation }}
                     {{ merchantRelationRequest.companyUser.customer.firstName }}
                     {{ merchantRelationRequest.companyUser.customer.lastName }}
@@ -93,8 +93,8 @@
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Email' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantRelationRequest.companyUser.customer.email }}</div>
+                <div class="col-sm-2"><b>{{ 'Email' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantRelationRequest.companyUser.customer.email }}</div>
             </div>
         {% endblock %}
     {% endembed %}
@@ -102,8 +102,8 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Additional Details' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Message from the Company' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantRelationRequest.requestNote }}</div>
+                <div class="col-sm-2"><b>{{ 'Message from the Company' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantRelationRequest.requestNote }}</div>
             </div>
         {% endblock %}
     {% endembed %}
@@ -111,8 +111,8 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Company Note' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ merchantRelationRequestForm.children.decisionNote.vars.label | trans }}</b></div>
-                <div class="col-xs-10">{{ form_row(merchantRelationRequestForm.children.decisionNote, {
+                <div class="col-sm-2"><b>{{ merchantRelationRequestForm.children.decisionNote.vars.label | trans }}</b></div>
+                <div class="col-sm-10">{{ form_row(merchantRelationRequestForm.children.decisionNote, {
                         label: false,
                         disabled: not isEditableMerchantRelationRequest
                     }) }}</div>
