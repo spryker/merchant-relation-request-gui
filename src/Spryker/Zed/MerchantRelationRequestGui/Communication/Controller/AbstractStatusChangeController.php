@@ -30,11 +30,6 @@ abstract class AbstractStatusChangeController extends AbstractMerchantRelationRe
      */
     protected const ERROR_MESSAGE_CSRF_TOKEN_IS_NOT_VALID = 'CSRF token is not valid.';
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     abstract protected function getForm(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): FormInterface;
 
     /**
@@ -48,12 +43,6 @@ abstract class AbstractStatusChangeController extends AbstractMerchantRelationRe
         FormInterface $statusChangeMerchantRelationRequestForm
     ): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param \Symfony\Component\Form\FormInterface $statusChangeMerchantRelationRequestForm
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     abstract protected function getMerchantRelationRequestTransferToUpdate(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer,
         FormInterface $statusChangeMerchantRelationRequestForm

@@ -19,9 +19,6 @@ class MerchantRelationRequestFormDataProvider implements MerchantRelationRequest
      */
     protected MerchantRelationRequestGuiToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequestGui\Dependency\Facade\MerchantRelationRequestGuiToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade
-     */
     public function __construct(MerchantRelationRequestGuiToCompanyBusinessUnitFacadeInterface $companyBusinessUnitFacade)
     {
         $this->companyBusinessUnitFacade = $companyBusinessUnitFacade;

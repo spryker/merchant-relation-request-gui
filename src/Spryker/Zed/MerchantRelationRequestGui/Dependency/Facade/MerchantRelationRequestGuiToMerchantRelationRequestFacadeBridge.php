@@ -27,11 +27,6 @@ class MerchantRelationRequestGuiToMerchantRelationRequestFacadeBridge implements
         $this->merchantRelationRequestFacade = $merchantRelationRequestFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionTransfer
-     */
     public function getMerchantRelationRequestCollection(
         MerchantRelationRequestCriteriaTransfer $merchantRelationRequestCriteriaTransfer
     ): MerchantRelationRequestCollectionTransfer {
@@ -39,11 +34,6 @@ class MerchantRelationRequestGuiToMerchantRelationRequestFacadeBridge implements
             ->getMerchantRelationRequestCollection($merchantRelationRequestCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     public function updateMerchantRelationRequestCollection(
         MerchantRelationRequestCollectionRequestTransfer $merchantRelationRequestCollectionRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {

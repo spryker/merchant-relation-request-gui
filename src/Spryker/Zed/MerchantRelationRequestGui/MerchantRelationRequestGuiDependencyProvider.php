@@ -39,11 +39,6 @@ class MerchantRelationRequestGuiDependencyProvider extends AbstractBundleDepende
      */
     public const PROPEL_QUERY_MERCHANT_RELATION_REQUEST = 'PROPEL_QUERY_MERCHANT_RELATION_REQUEST';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -55,11 +50,6 @@ class MerchantRelationRequestGuiDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationRequestFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_RELATION_REQUEST, function (Container $container) {
@@ -71,11 +61,6 @@ class MerchantRelationRequestGuiDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyBusinessUnitFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_BUSINESS_UNIT, function (Container $container) {
@@ -87,11 +72,6 @@ class MerchantRelationRequestGuiDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilDateTimeService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_DATE_TIME, function (Container $container) {
@@ -103,11 +83,6 @@ class MerchantRelationRequestGuiDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationRequestPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_MERCHANT_RELATION_REQUEST, $container->factory(function () {

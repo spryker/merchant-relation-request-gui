@@ -42,11 +42,6 @@ abstract class AbstractMerchantRelationRequestController extends AbstractControl
      */
     protected const URL_MERCHANT_RELATIONSHIP_REQUEST_EDIT = '/merchant-relation-request-gui/edit?%s=%s';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer|null
-     */
     protected function findMerchantRelationRequestByRequest(Request $request): ?MerchantRelationRequestTransfer
     {
         $idMerchantRelationRequest = $this->castId($request->get(MerchantRelationRequestListTable::PARAM_ID_MERCHANT_RELATION_REQUEST));
@@ -66,11 +61,6 @@ abstract class AbstractMerchantRelationRequestController extends AbstractControl
         return $merchantRelationRequestTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestCollectionResponseTransfer
-     */
     protected function updateMerchantRelationRequest(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer
     ): MerchantRelationRequestCollectionResponseTransfer {
@@ -87,11 +77,6 @@ abstract class AbstractMerchantRelationRequestController extends AbstractControl
         return $merchantRelationRequestCollectionResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return string
-     */
     protected function getEditPageUrl(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): string
     {
         return sprintf(

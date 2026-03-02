@@ -102,12 +102,6 @@ class MerchantRelationRequestListTable extends AbstractTable
      */
     protected MerchantRelationRequestConditionsTransfer $merchantRelationRequestConditionsTransfer;
 
-    /**
-     * @param \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery $merchantRelationRequestQuery
-     * @param \Spryker\Zed\MerchantRelationRequestGui\Dependency\Service\MerchantRelationRequestGuiToUtilDateTimeServiceInterface $dateTimeService
-     * @param \Spryker\Zed\MerchantRelationRequestGui\MerchantRelationRequestGuiConfig $merchantRelationRequestGuiConfig
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestConditionsTransfer $merchantRelationRequestConditionsTransfer
-     */
     public function __construct(
         SpyMerchantRelationRequestQuery $merchantRelationRequestQuery,
         MerchantRelationRequestGuiToUtilDateTimeServiceInterface $dateTimeService,
@@ -120,11 +114,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         $this->merchantRelationRequestConditionsTransfer = $merchantRelationRequestConditionsTransfer;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config = $this->setHeader($config);
@@ -139,11 +128,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setHeader(TableConfiguration $config): TableConfiguration
     {
         $config->setHeader([
@@ -160,11 +144,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setSortable(TableConfiguration $config): TableConfiguration
     {
         $config->setSortable([
@@ -178,11 +157,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setSearchable(TableConfiguration $config): TableConfiguration
     {
         $config->setSearchable([
@@ -195,11 +169,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setRawColumns(TableConfiguration $config): TableConfiguration
     {
         $config->setRawColumns([
@@ -210,9 +179,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @return string
-     */
     protected function getTableUrl(): string
     {
         return Url::generate(
@@ -294,11 +260,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $merchantRelationRequestQuery;
     }
 
-    /**
-     * @param \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery $merchantRelationRequestQuery
-     *
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery
-     */
     protected function applyFilters(
         SpyMerchantRelationRequestQuery $merchantRelationRequestQuery
     ): SpyMerchantRelationRequestQuery {
@@ -317,11 +278,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         return $merchantRelationRequestQuery;
     }
 
-    /**
-     * @param string $status
-     *
-     * @return string
-     */
     protected function getStatusLabel(string $status): string
     {
         $class = $this->merchantRelationRequestGuiConfig->getStatusClassLabelMapping()[$status] ?? static::STATUS_LABEL_DEFAULT;
@@ -363,11 +319,6 @@ class MerchantRelationRequestListTable extends AbstractTable
         );
     }
 
-    /**
-     * @param string $status
-     *
-     * @return bool
-     */
     protected function isEditableMerchantRelationRequest(string $status): bool
     {
         return in_array($status, $this->merchantRelationRequestGuiConfig->getEditableMerchantRelationRequestStatuses(), true);

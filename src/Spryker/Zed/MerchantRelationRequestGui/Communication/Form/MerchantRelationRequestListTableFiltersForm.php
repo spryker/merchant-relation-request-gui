@@ -63,19 +63,11 @@ class MerchantRelationRequestListTableFiltersForm extends AbstractType
      */
     protected const FORM_METHOD = 'GET';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return '';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

@@ -39,19 +39,11 @@ use Symfony\Component\Form\FormTypeInterface;
  */
 class MerchantRelationRequestGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Symfony\Component\Form\FormTypeInterface
-     */
     public function createIsOpenForRelationRequestFormType(): FormTypeInterface
     {
         return new IsOpenForRelationRequestFormType();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestConditionsTransfer $merchantRelationRequestConditionsTransfer
-     *
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Communication\Table\MerchantRelationRequestListTable
-     */
     public function createMerchantRelationRequestListTable(
         MerchantRelationRequestConditionsTransfer $merchantRelationRequestConditionsTransfer
     ): MerchantRelationRequestListTable {
@@ -74,11 +66,6 @@ class MerchantRelationRequestGuiCommunicationFactory extends AbstractCommunicati
         return $this->getFormFactory()->create(MerchantRelationRequestListTableFiltersForm::class, $data, $options);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer|null $merchantRelationRequestTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createApproveMerchantRelationRequestForm(
         ?MerchantRelationRequestTransfer $merchantRelationRequestTransfer = null
     ): FormInterface {
@@ -93,9 +80,6 @@ class MerchantRelationRequestGuiCommunicationFactory extends AbstractCommunicati
         return $this->getFormFactory()->create(RejectMerchantRelationRequestForm::class);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Communication\Form\DataProvider\MerchantRelationRequestListTableFiltersFormDataProviderInterface
-     */
     public function createMerchantRelationRequestListTableFiltersFormDataProvider(): MerchantRelationRequestListTableFiltersFormDataProviderInterface
     {
         return new MerchantRelationRequestListTableFiltersFormDataProvider(
@@ -125,57 +109,36 @@ class MerchantRelationRequestGuiCommunicationFactory extends AbstractCommunicati
         return new AssigneeCompanyBusinessUnitsDataTransformer();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Communication\Form\DataProvider\MerchantRelationRequestFormDataProviderInterface
-     */
     public function createMerchantRelationRequestFormDataProvider(): MerchantRelationRequestFormDataProviderInterface
     {
         return new MerchantRelationRequestFormDataProvider($this->getCompanyBusinessUnitFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Communication\Updater\MerchantRelationRequestUpdaterInterface
-     */
     public function createMerchantRelationRequestUpdater(): MerchantRelationRequestUpdaterInterface
     {
         return new MerchantRelationRequestUpdater($this->getMerchantRelationRequestFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Communication\Reader\MerchantRelationRequestReaderInterface
-     */
     public function createMerchantRelationRequestReader(): MerchantRelationRequestReaderInterface
     {
         return new MerchantRelationRequestReader($this->getMerchantRelationRequestFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Dependency\Facade\MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface
-     */
     public function getMerchantRelationRequestFacade(): MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestGuiDependencyProvider::FACADE_MERCHANT_RELATION_REQUEST);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Dependency\Facade\MerchantRelationRequestGuiToCompanyBusinessUnitFacadeInterface
-     */
     public function getCompanyBusinessUnitFacade(): MerchantRelationRequestGuiToCompanyBusinessUnitFacadeInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestGuiDependencyProvider::FACADE_COMPANY_BUSINESS_UNIT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantRelationRequestGui\Dependency\Service\MerchantRelationRequestGuiToUtilDateTimeServiceInterface
-     */
     public function getUtilDateTimeService(): MerchantRelationRequestGuiToUtilDateTimeServiceInterface
     {
         return $this->getProvidedDependency(MerchantRelationRequestGuiDependencyProvider::SERVICE_UTIL_DATE_TIME);
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery
-     */
     public function getMerchantRelationRequestPropelQuery(): SpyMerchantRelationRequestQuery
     {
         return $this->getProvidedDependency(MerchantRelationRequestGuiDependencyProvider::PROPEL_QUERY_MERCHANT_RELATION_REQUEST);

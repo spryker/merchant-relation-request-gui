@@ -41,11 +41,6 @@ class ListController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableDataAction(Request $request): JsonResponse
     {
         $merchantRelationRequestConditionsTransfer = $this->getMerchantRelationRequestConditions($request);
@@ -56,11 +51,6 @@ class ListController extends AbstractController
         return $this->jsonResponse($merchantRelationRequestListTable->fetchData());
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestConditionsTransfer
-     */
     protected function getMerchantRelationRequestConditions(Request $request): MerchantRelationRequestConditionsTransfer
     {
         $idCompany = $request->get(MerchantRelationRequestListTableFiltersForm::FIELD_COMPANY, null);

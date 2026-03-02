@@ -147,11 +147,6 @@ class EditController extends AbstractMerchantRelationRequestController
         return $responseData;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $merchantRelationRequestForm
-     *
-     * @return string|null
-     */
     protected function findClickedButtonName(FormInterface $merchantRelationRequestForm): ?string
     {
         // @phpstan-ignore-next-line
@@ -164,11 +159,6 @@ class EditController extends AbstractMerchantRelationRequestController
         return null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isEditableMerchantRelationRequest(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): bool
     {
         return in_array(

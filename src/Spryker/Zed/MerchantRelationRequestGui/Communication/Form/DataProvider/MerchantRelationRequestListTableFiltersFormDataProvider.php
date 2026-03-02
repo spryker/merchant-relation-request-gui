@@ -34,10 +34,6 @@ class MerchantRelationRequestListTableFiltersFormDataProvider implements Merchan
      */
     protected MerchantRelationRequestGuiConfig $merchantRelationRequestGuiConfig;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequestGui\Dependency\Facade\MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface $merchantRelationRequestFacade
-     * @param \Spryker\Zed\MerchantRelationRequestGui\MerchantRelationRequestGuiConfig $merchantRelationRequestGuiConfig
-     */
     public function __construct(
         MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface $merchantRelationRequestFacade,
         MerchantRelationRequestGuiConfig $merchantRelationRequestGuiConfig

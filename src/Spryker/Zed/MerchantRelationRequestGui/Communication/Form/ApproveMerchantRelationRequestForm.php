@@ -35,11 +35,6 @@ class ApproveMerchantRelationRequestForm extends AbstractType
      */
     protected const LABEL_IS_SPLIT_ENABLED = 'Create a separate merchant relation per each business unit';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

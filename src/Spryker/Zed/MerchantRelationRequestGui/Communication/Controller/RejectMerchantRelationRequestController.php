@@ -27,11 +27,6 @@ class RejectMerchantRelationRequestController extends AbstractStatusChangeContro
      */
     protected const SUCCESS_MESSAGE_STATUS_CHANGED = 'Merchant relation request has been rejected.';
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function getForm(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): FormInterface
     {
         return $this->getFactory()->createRejectMerchantRelationRequestForm();
@@ -53,12 +48,6 @@ class RejectMerchantRelationRequestController extends AbstractStatusChangeContro
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param \Symfony\Component\Form\FormInterface $statusChangeMerchantRelationRequestForm
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     protected function getMerchantRelationRequestTransferToUpdate(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer,
         FormInterface $statusChangeMerchantRelationRequestForm

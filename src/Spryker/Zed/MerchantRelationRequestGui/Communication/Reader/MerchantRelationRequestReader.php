@@ -19,20 +19,12 @@ class MerchantRelationRequestReader implements MerchantRelationRequestReaderInte
      */
     protected MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface $merchantRelationRequestFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationRequestGui\Dependency\Facade\MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface $merchantRelationRequestFacade
-     */
     public function __construct(
         MerchantRelationRequestGuiToMerchantRelationRequestFacadeInterface $merchantRelationRequestFacade
     ) {
         $this->merchantRelationRequestFacade = $merchantRelationRequestFacade;
     }
 
-    /**
-     * @param int $idMerchantRelationRequest
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer|null
-     */
     public function findMerchantRelationRequestByIdMerchantRelationRequest(
         int $idMerchantRelationRequest
     ): ?MerchantRelationRequestTransfer {

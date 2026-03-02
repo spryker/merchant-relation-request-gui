@@ -15,11 +15,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class ApproveMerchantRelationRequestController extends AbstractStatusChangeController
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function getForm(MerchantRelationRequestTransfer $merchantRelationRequestTransfer): FormInterface
     {
         return $this->getFactory()->createApproveMerchantRelationRequestForm($merchantRelationRequestTransfer);
@@ -41,12 +36,6 @@ class ApproveMerchantRelationRequestController extends AbstractStatusChangeContr
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationRequestTransfer $merchantRelationRequestTransfer
-     * @param \Symfony\Component\Form\FormInterface $statusChangeMerchantRelationRequestForm
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationRequestTransfer
-     */
     protected function getMerchantRelationRequestTransferToUpdate(
         MerchantRelationRequestTransfer $merchantRelationRequestTransfer,
         FormInterface $statusChangeMerchantRelationRequestForm
