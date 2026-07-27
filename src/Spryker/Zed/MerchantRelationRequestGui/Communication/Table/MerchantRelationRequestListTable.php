@@ -238,17 +238,20 @@ class MerchantRelationRequestListTable extends AbstractTable
         /** @var \Orm\Zed\MerchantRelationRequest\Persistence\SpyMerchantRelationRequestQuery $merchantRelationRequestQuery */
         $merchantRelationRequestQuery = $this->merchantRelationRequestQuery;
 
-        // @phpstan-ignore-next-line
         $merchantRelationRequestQuery
             ->groupByIdMerchantRelationRequest()
             ->innerJoinMerchant()
             ->innerJoinCompanyBusinessUnit()
             ->useCompanyBusinessUnitQuery()
                 ->innerJoinCompany()
-            ->endUse()
+            ->endUse();
+
+        $merchantRelationRequestQuery
             ->useSpyMerchantRelationRequestToCompanyBusinessUnitQuery()
                 ->innerJoinCompanyBusinessUnit('assigneeCompanyBusinessUnits')
-            ->endUse()
+            ->endUse();
+
+        $merchantRelationRequestQuery
             ->withColumn(SpyMerchantTableMap::COL_NAME, static::COL_MERCHANT_NAME)
             ->withColumn(SpyMerchantTableMap::COL_ID_MERCHANT, static::COL_ID_MERCHANT)
             ->withColumn(SpyCompanyTableMap::COL_NAME, static::COL_COMPANY_NAME)
